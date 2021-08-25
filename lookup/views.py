@@ -10,7 +10,7 @@ def home(request):
     if zip is None or zip == "":
         zip = '60610'
 
-    url = f"https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode={zip}&distance=25&API_KEY=1135F5DC-291B-4A10-8C9D-748AAB165396"
+    url = f"https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode={zip}&distance=25&API_KEY="
     api_response = requests.get(url)
     # print(url)
 
