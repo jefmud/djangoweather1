@@ -2,6 +2,34 @@
 
 {% block content %}
 
-<h1>Hello World!!</h1>
+<h1>Air Quality</h1>
+<p>Date: <b>{{ api.0.DateObserved }}</b></p>
+<p>Locale: <b>{{ api.0.ReportingArea }}</b></p>
+<div class="p-5 mb-4 rounded-3 aircategory-{{api.0.Category.Number}}">
+    <h2>{{api.0.Category.Name}}</h2>
+AQI: <b>{{ api.0.AQI }}</b><br/>
+Quality: <b>{{api.0.Category.Name }}</b>
+<br/>
+<!-- <div class="p-5 mb-4 rounded-3 aircategory-{{api.0.Category.Number}}"> -->
+{% if api.0.Category.Number == 1 %}
+0 to 50, Air quality is satisfactory, and air pollution poses little or no risk.
+{% elif api.0.Category.Number == 2 %}
+51 to 100, Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.
+{% elif api.0.Category.Number == 3 %}
+101 to 150, Members of sensitive groups may experience health effects. The general public is less likely to be affected.
+{% elif api.0.Category.Number == 4 %}
+151 to 200, Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.
+{% elif api.0.Category.Number == 5 %}
+201 to 300, Health alert: The risk of health effects is increased for everyone.
+{% elif api.0.Category.Number == 6 %}
+301 and higher, Health warning of emergency conditions: everyone is more likely to be affected.
+{% else %}
+    No data
+{% endif %}
+</div>
+<br/>
+<hr>
+<p><small>{{ api.0 }}</small></p>
+
 
 {% endblock %}

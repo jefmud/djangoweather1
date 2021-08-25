@@ -8,7 +8,16 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Current Weather</title>
+    <style>
+      .aircategory-0 {background-color: #fefefe;}
+      .aircategory-1 {background-color: #00e400;}
+      .aircategory-2 {background-color: #ffff00;}
+      .aircategory-3 {background-color: #ff7e00;}
+      .aircategory-4 {background-color: #ff0000;}
+      .aircategory-5 {background-color: #8f3f97;}
+      .aircategory-6 {background-color: #7e0023;}
+    </style>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,8 +33,9 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        {% csrf_token %}
+        <input name="zipcode" class="form-control me-2" type="text" placeholder="Zipcode" aria-label="Zipcode">
+        <button class="btn btn-outline-success" type="submit">Lookup</button>
       </form>
     </div>
   </div>
