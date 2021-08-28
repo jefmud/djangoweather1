@@ -3,7 +3,10 @@
 {% block content %}
 
 <h1>Air Quality</h1>
-<p>Date: <b>{{ api.0.DateObserved }}</b></p>
+<p>
+    Date: <b>{{ api.0.DateObserved }}</b><br/>
+    Hour Observed: {{ api.0.HourObserved }}
+</p>
 <p>Locale: <b>{{ api.0.ReportingArea }}</b></p>
 <div class="p-5 mb-4 rounded-3 aircategory-{{api.0.Category.Number}}">
     <h2>{{api.0.Category.Name}}</h2>
