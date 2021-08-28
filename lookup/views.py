@@ -3,11 +3,6 @@ import requests
 import json
 from . import secrets
 
-api_secrets = {
-    "weather_key": "1ea2c5a36ace0a781d3ac829c4bd2f6d",
-    "airquality_key": "1135F5DC-291B-4A10-8C9D-748AAB165396"
-}
-
 def air_quality(request):
     user_inp = request.GET.get("zipcode")
     # print(type(user_inp), f"'{user_inp}'")
