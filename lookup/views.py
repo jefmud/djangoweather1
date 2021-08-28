@@ -11,7 +11,6 @@ def air_quality(request):
         zip = '60610'
 
     # the key is in the database
-    API_KEY = api_secrets['airquality_key']
     API_KEY = secrets.airquality_key
     url = f"https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode={zip}&distance=25&API_KEY={API_KEY}"
     api_response = requests.get(url)
@@ -28,7 +27,7 @@ def air_quality(request):
 
 def fetch_weather(q=None, id=None, zip=None):
     url1 = f'http://api.openweathermap.org/data/2.5/weather?'
-    api_key = api_secrets['weather_key']
+    api_key = secrets.weather_key
     url3 = f'appid={api_key}&units=imperial'
 
     url2 = 'q=Chicago&'
